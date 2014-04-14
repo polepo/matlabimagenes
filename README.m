@@ -132,11 +132,6 @@ filtro_bajo=filter2(filtro,double(im_grayy));
 im_edge=edge(filtro_bajo,'canny');
 figure(10),imshow(filtro_bajo);
 figure(11),imshow(im_edge);
-%intentarlo haciendo la media de la longitud +la posicion inicial como
-%punto i y sacar el punto j de dicha media y con el centro de la cara
-%moverme hacia los lados la distancia media /2 y recortar esa parte solo 1
-%vez. despues uso lo del histograma y compruebo si los ojos estan cerrados
-%o abiertos
 for j=1:3
 imag2=bwareaopen(im_edge,j);%N=1,2,5,10,15,20
 figure(12),subplot(3,1,j),imshow(imag2),title(['obj removidos menores a: ',int2str(j)],'color','b');
